@@ -1,0 +1,94 @@
+{
+  "name": "@internal/backstage-plugin-security-insights",
+  "version": "3.3.11",
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./alpha": "./src/alpha.ts",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "config.d.ts"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "backstage": {
+    "role": "frontend-plugin",
+    "pluginId": "security-insights",
+    "pluginPackages": [
+      "@internal/backstage-plugin-security-insights"
+    ]
+  },
+  "typesVersions": {
+    "*": {
+      "alpha": [
+        "src/alpha.ts"
+      ],
+      "package.json": [
+        "package.json"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "backstage-cli package build",
+    "start": "backstage-cli package start",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "publish": "yarn npm publish",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^1.7.4",
+    "@backstage/core-compat-api": "^0.4.3",
+    "@backstage/core-components": "^0.17.3",
+    "@backstage/core-plugin-api": "^1.10.8",
+    "@backstage/errors": "^1.2.7",
+    "@backstage/frontend-plugin-api": "^0.10.3",
+    "@backstage/integration-react": "^1.2.9",
+    "@backstage/plugin-catalog-react": "^1.19.0",
+    "@backstage/plugin-scaffolder-react": "^1.17.0",
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "4.0.0-alpha.61",
+    "@octokit/rest": "^20.0.2",
+    "@roadiehq/github-auth-utils-react": "^1.1.0",
+    "@types/react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "git-url-parse": "^16.0.0",
+    "global": "^4.4.0",
+    "luxon": "^3.0.0",
+    "react-use": "^17.2.4",
+    "slugify": "^1.6.4",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.33.0",
+    "@backstage/dev-utils": "^1.1.11",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^15.0.0",
+    "@types/luxon": "^3.0.0",
+    "@types/react-dom": "^18.2.19",
+    "msw": "^1.0.1",
+    "react": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0 || ^18.0.0",
+    "react-router-dom": "6.0.0-beta.0 || ^6.3.0"
+  },
+  "resolutions": {
+    "react-markdown": "^10.1.0"
+  },
+  "configSchema": "config.d.ts",
+  "packageManager": "yarn@4.10.3"
+}
