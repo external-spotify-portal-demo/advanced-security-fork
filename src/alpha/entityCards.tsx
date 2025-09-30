@@ -22,6 +22,7 @@ import { EntityCardBlueprint } from '@backstage/plugin-catalog-react/alpha';
 export const entitySecurityInsightsContentCard: any = EntityCardBlueprint.make({
   name: 'securityInsightsCard',
   params: {
+    filter: 'kind:component',
     loader: () =>
       import('../components/SecurityInsightsWidget').then(m => (
         <m.SecurityInsightsWidget />
@@ -35,6 +36,7 @@ export const entitySecurityInsightsContentCard: any = EntityCardBlueprint.make({
 export const entityDependabotAlertsCard: any = EntityCardBlueprint.make({
   name: 'dependabotAlertsCard',
   params: {
+    filter: 'kind:component',
     loader: () =>
       import('../components/DependabotAlertsWidget').then(m => (
         <m.DependabotAlertsWidget />
